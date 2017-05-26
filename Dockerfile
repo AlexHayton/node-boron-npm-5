@@ -1,5 +1,6 @@
 FROM node:boron
 
 # Install NPM 5... it's grrrreat!
-RUN npm install -g npm@5
-RUN npm install -g semver
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+	apt-get install -y nodejs && \
+	npm install npm@5 -g
